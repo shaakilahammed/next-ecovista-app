@@ -1,3 +1,5 @@
+import LocationDetector from '@/components/LocationDetector';
+
 export default function Home() {
-    return <main className="wrapper">Hello ecoVista</main>;
+    return <LocationDetector />;
 }
