@@ -6,18 +6,18 @@ const TemperatureCard = async ({ lat, lon }) => {
     const { temp, feels_like } = await getTemperatureData(lat, lon);
     return (
         <Card>
-            <h6 class="feature-name">Current Temperature</h6>
-            <div class="feature-main">
+            <h6 className="feature-name">Current Temperature</h6>
+            <div className="feature-main">
                 <Image
-                    class="max-w-20"
+                    className="max-w-20"
                     src="/assets/icons/icon_tempareture.png"
                     alt="rain icon"
                     height={80}
                     width={80}
                 />
-                <h3 class="feature-title">{temp}°C</h3>
+                <h3 className="feature-title">{temp}°C</h3>
 
-                <span class="feature-name">Feels Like {feels_like}°C</span>
+                <span className="feature-name">Feels Like {feels_like}°C</span>
             </div>
         </Card>
     );
