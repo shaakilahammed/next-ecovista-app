@@ -22,10 +22,26 @@ export const getLocationListData = async () => {
 
 export const getLocationDatabyName = async (locationName) => {
     try {
-        const response = await fetch(`/api/locations/${locationName}`);
-        const data = await response.json();
+        const response = await fetch(
+            `http://localhost:3000/api/locations/${locationName}`
+        );
+        const data = response.json();
         return data;
     } catch (error) {
         console.error(error.message);
+    }
+};
+
+export const getResolvedLocationData = async (location, lat, lon) => {
+    if (lat && lon) {
+        return { lat, lon };
+    }
+    const lc = await getLocationDatabyName(location);
+
+    if (lc.latitude && lc.longitude) {
+        const lat = lc.latitude;
+        const lon = lc.longitude;
+
+        return { lat, lon };
     }
 };
