@@ -12,7 +12,9 @@ export const getLocationData = async (lat, lon) => {
 
 export const getLocationListData = async () => {
     try {
-        const response = await fetch(`/api/locations`);
+        const response = await fetch(
+            `https://next-ecovista-app.vercel.app/api/locations`
+        );
         const data = await response.json();
         return data;
     } catch (error) {
@@ -23,7 +25,7 @@ export const getLocationListData = async () => {
 export const getLocationDatabyName = async (locationName) => {
     try {
         const response = await fetch(
-            `http://localhost:3000/api/locations/${locationName}`
+            `https://next-ecovista-app.vercel.app/api/locations/${locationName}`
         );
         const data = response.json();
         return data;
